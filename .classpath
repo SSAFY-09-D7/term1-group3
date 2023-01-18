@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="w1/" kind="src" path="210"/>
+	<classpathentry kind="src" path="210/w1"/>
+	<classpathentry kind="src" path="juha/w1"/>
+	<classpathentry kind="src" path="SeungJong/src"/>
+	<classpathentry kind="output" path="SeungJong/bin"/>
+</classpath>
