@@ -1,0 +1,23 @@
+3
+6
+S A S S W S
+S W A S C S
+S W S W S S
+S W S S W S
+S B S S W S
+S S S S S S
+3
+S S A
+B W W
+S W C
+10
+C S S S S S S S S C
+S W S S S S S S W S
+S S W S S S S W S S
+A S S W S S W S S A
+S S S S S B S S S S
+S S S S B S S S S S
+A S S W S S W S S A
+S S W S S S S W S S
+S W S S S S S S W S
+C S S S S S S S S C
