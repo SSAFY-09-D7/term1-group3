@@ -38,7 +38,6 @@ public class waterStriderOverlab {
 					}
 					else break;
 				}
-				
 			}			
 			System.out.println("#" + test_case + " " + wsNum);
 		}
