@@ -31,10 +31,9 @@ public class WaterSpiderSum {
                 map[r][c] = true;
                 result++;
             }
-
 			System.out.println("#" + tc + " " + result);
 		}
-		
+
 		sc.close();
 	}
 }
