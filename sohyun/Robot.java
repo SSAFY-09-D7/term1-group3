@@ -1,9 +1,7 @@
-package sweaSolution;
+package com.ssafy.workshop05;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
@@ -17,13 +15,9 @@ public class Robot {
 		for(int testcase=1;testcase<=TC;testcase++)
 		{
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			
 			int N = Integer.parseInt(st.nextToken());
 			int answer = 0;
 			String [][] arr = new String[N][N];
-			boolean[][] visited = new boolean[N][N];
-			
-			
 			
 			for(int i=0;i<N;i++)
 			{
@@ -33,6 +27,7 @@ public class Robot {
 					arr[i][j] = st.nextToken();
 				}
 			}
+			
 			
 			int r = 0;
 			int l = 0;
@@ -50,11 +45,11 @@ public class Robot {
 						r = j;
 						while(true) {
 							r++;
-							if(r>=0 && r<N)
+							if(r<N)
 							{
 								if(!arr[i][r].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 					}
 					else if(temp.equals("B"))
@@ -62,63 +57,65 @@ public class Robot {
 						l = j;
 						r = j;
 						while(true) {
-							l++;
+							//왼쪽으로 1칸 이동 
+							l-=1;
 							if(l>=0)
 							{
 								if(!arr[i][l].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 						while(true) {
 							r++;
+							//오른쪽으로 2칸 이동.
 							if(r<N)
 							{
 								if(!arr[i][r].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 					}
 					else if(temp.equals("C"))
 					{
-						u=i;
-						d=i;
+						//상하좌우1
+						u=i;		
+						d=i;		
 						l=j;
 						r=j;
 						//순서대로 상,하,좌,우
 						while(true) {
 							u-=1;
-							if(u>=0 &&u<N) {
+							if(u>=0) {
 								if(!arr[u][j].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 						while(true) {
 							d+=1;
-							if(d>=0 &&d<N) {
+							if(d<N) {
 								if(!arr[d][j].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 						while(true) {
 							l-=1;
-							if(l>=0 &&l<N) {
+							if(l>=0) {
 								if(!arr[i][l].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 						while(true) {
 							r+=1;
-							if(r>=0 &&r<N) {
+							if(r<N) {
 								if(!arr[i][r].equals("S")) break;
-								answer+=1;
-							}
+								else answer+=1;
+							}else break;
 						}
 					}
 				}
 			}
-			System.out.println(answer);
+			System.out.printf("#%d %d\n",testcase,answer);
 
 		}
 	}
-
 }
