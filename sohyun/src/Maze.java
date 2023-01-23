@@ -51,54 +51,67 @@ public class Maze {
                 int moveCnt = directMap[m][1];
                 int nx = startRow;
                 int ny = startCol;
-                // System.out.printf("현재위치:%d, %d\n", nx, ny);
+                System.out.printf("현재위치:%d, %d\n", nx, ny);
                 if (direction == 1) {
                     //북
-                    nx = nx - moveCnt;
-                    if (nx < 1 || maze[nx][ny] == -1) {
-                        //경계 넘어가거나 jumper에 도착하면 0,0
-                        startRow = 0;
-                        startCol = 0;
-                        break;
-                    } else {
-                        startRow = nx;
+                    for (int cnt = 0; cnt < moveCnt; cnt++) {
+                        nx = nx - 1;
+                        if (nx < 1 || maze[nx][ny] == -1) {
+                            //경계 넘어가거나 jumper에 도착하면 0,0
+                            startRow = 0;
+                            startCol = 0;
+                            break;
+                        } else {
+                            startRow = nx;
+                        }
                     }
+                    
                 } else if (direction == 2) {
                     //동
-                    ny = ny + moveCnt;
-                    if (ny > N || maze[nx][ny] == -1) {
-                        //경계 넘어가거나 jumper에 도착하면 0,0
-                        startRow = 0;
-                        startCol = 0;
-                        break;
-                    } else {
-                        startCol = ny;
+                    for (int cnt = 0; cnt < moveCnt; cnt++) {
+                        ny = ny + 1;
+                        if (ny > N || maze[nx][ny] == -1) {
+                            //경계 넘어가거나 jumper에 도착하면 0,0
+                            startRow = 0;
+                            startCol = 0;
+                            break;
+                        } else {
+                            startCol = ny;
+                        }
                     }
+                    
                 } else if (direction == 3) {
                     //남
-                    nx = nx + moveCnt;
-                    if (nx > N || maze[nx][ny] == -1) {
-                        //경계 넘어가거나 jumper에 도착하면 0,0
-                        startRow = 0;
-                        startCol = 0;
-                        break;
-                    } else {
-                        startRow = nx;
+                    for (int cnt = 0; cnt < moveCnt; cnt++) {
+                        nx = nx + 1;
+                        if (nx > N || maze[nx][ny] == -1) {
+                            //경계 넘어가거나 jumper에 도착하면 0,0
+                            startRow = 0;
+                            startCol = 0;
+                            break;
+                        } else {
+                            startRow = nx;
+                        }
                     }
+                   
 
                 } else if (direction == 4) {
                     //서
-                    ny = ny - moveCnt;
-                    if (ny < 1 || maze[nx][ny] == -1) {
-                        //경계 넘어가거나 jumper에 도착하면 0,0
-                        startRow = 0;
-                        startCol = 0;
-                        break;
-                    } else {
-                        startCol = ny;
+                    for (int cnt = 0; cnt < moveCnt; cnt++) {
+                        ny = ny - 1;
+                        if (ny < 1 || maze[nx][ny] == -1) {
+                            //경계 넘어가거나 jumper에 도착하면 0,0
+                            startRow = 0;
+                            startCol = 0;
+                            break;
+                        } else {
+                            startCol = ny;
+                        }
                     }
-                }
 
+                }
+                if (startCol == 0 || startRow == 0)
+                    break;
             }
             
             System.out.printf("#%d %d %d\n", testcase, startRow, startCol);
