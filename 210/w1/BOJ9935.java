@@ -5,14 +5,14 @@ import java.io.*;
 
 class solution {
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("../inputs/input_BOJ9935.txt"));
+		System.setIn(new FileInputStream("./inputs/input_BOJ9935.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		
+
 		String str = br.readLine();
 		String target = br.readLine();
 		int size = target.length();
-		
+
 		for (int i = 0; i < str.length(); i++) {
 			char c = str.charAt(i);
 			sb.append(c);
@@ -26,14 +26,14 @@ class solution {
 						break;
 					}
 				}
-				
+
 				if (isSame) {
-					sb.delete(sb.length()-size, sb.length());
+					sb.delete(sb.length() - size, sb.length());
 				}
 			}
 		}
-		
-		String res = sb.length() == 0? "FRULA" : sb.toString();
+
+		String res = sb.length() == 0 ? "FRULA" : sb.toString();
 
 		System.out.println(res);
 		br.close();

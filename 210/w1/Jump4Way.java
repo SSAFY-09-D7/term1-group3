@@ -6,7 +6,7 @@ import java.util.Scanner;
 class solution {
 
     public static void main(String[] args) throws Exception {
-        System.setIn(new FileInputStream("../inputs/input_jump_4way.txt"));
+        System.setIn(new FileInputStream("./inputs/input_jump_4way.txt"));
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
 
