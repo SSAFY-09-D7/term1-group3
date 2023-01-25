@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 
 class Solution {
     public static void main(String args[]) throws Exception {
-        System.setIn(new FileInputStream("./inputs/input_swea_7272.txt"));
+        System.setIn(new FileInputStream("./inputs/input_SWEA7272.txt"));
         Scanner sc = new Scanner(System.in);
         int T;
         T = sc.nextInt();
