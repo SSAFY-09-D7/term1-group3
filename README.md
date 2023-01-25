@@ -30,5 +30,8 @@ SSAFY 9기 대전 7반 3조
     - ex2 :  `git commit -m "feat: BOJ 1048 solution fix #1"`
 - 해결하지 못한 문제는 사고 과정 및 막힌 부분을 이슈에 자세히 기술
 - 다른 구성원들은 해당 이슈에 적극적 코멘트
-- 이슈 오픈 시간, 닫은 시간 비교 후 풀이 복기   
- 
+- 이슈 오픈 시간, 닫은 시간 비교 후 풀이 복기
+
+## 🍰 문제 리스트
+매일 (간단한 공통 1문제) + (자율 1문제)  
+[공통 문제 목록](https://docs.google.com/spreadsheets/d/1mmvh_2dj8T4FD75eNYFPrYTZXSfq78uiCFg0Z011E0Q/edit?usp=sharing)
