@@ -12,7 +12,6 @@ class Main {
         int cnt = in.nextInt();
         String msg = in.next();
         readCode(cnt, msg);
-
     }
 
     // 교환 일기 해석 메서드
