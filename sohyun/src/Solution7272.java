@@ -4,10 +4,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Solution7272 {
-    static String[] strArr = {"CEFGHIJKLMNSTUVWXYZ ","ADOPQR","B"};
+    static String[] strArr = {"CEFGHIJKLMNSTUVWXYZ","ADOPQR","B"};
 
     public static void main(String[] args) throws Exception {
-        System.setIn(new FileInputStream("sohyun/input/s_input.txt"));
+        // System.setIn(new FileInputStream("sohyun/input/s_input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int TC = Integer.parseInt(br.readLine());
         for (int testcase = 1; testcase <= TC; testcase++) {
