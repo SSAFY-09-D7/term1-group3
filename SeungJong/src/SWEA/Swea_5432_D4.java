@@ -1,3 +1,5 @@
+package SWEA;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -9,7 +11,7 @@ public class Swea_5432_D4 {
 	static char[] arr;
 	static String tmpInput;
 	public static void main(String[] args) throws FileNotFoundException {
-//		System.setIn(new FileInputStream("./input/input_swea5432.txt"));
+		System.setIn(new FileInputStream("./input/input_swea5432.txt"));
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		ArrayList<Integer> num = new ArrayList<Integer>();

@@ -1,13 +1,15 @@
+package SWEA;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Swea2805 {
+public class Swea_2805_D3 {
 	static int T, N, sum, start, finish;
 	static String V;
 	static int[][] arr;
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("input_swea2805.txt"));
+		System.setIn(new FileInputStream("./input/input_swea2805.txt"));
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		for(int tc = 1; tc<=T; tc++) {
