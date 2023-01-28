@@ -66,4 +66,4 @@ public class BOJ1244 {
 		return swi;
 	}
 
-}
+} 
