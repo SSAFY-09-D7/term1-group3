@@ -24,9 +24,11 @@ public class BOJ1244 {
 				swi = female(num-1, swi);
 			}
 		}
-		
-		for(int i = 0;i<swi.length;i++) {
-			System.out.print(swi[i] + " ");
+		int cnt = 0;
+		while(true) {
+			if(cnt>=swi.length) break;
+			System.out.print(swi[cnt++] + " ");
+			if(cnt%20 == 0) System.out.println();
 		}
 	}
 	
@@ -66,4 +68,4 @@ public class BOJ1244 {
 		return swi;
 	}
 
-} 
+}
