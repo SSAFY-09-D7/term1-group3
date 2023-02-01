@@ -1,6 +1,5 @@
 package BOJ;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Boj_2999 {
@@ -9,7 +8,6 @@ public class Boj_2999 {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.next();
 		int strLength = str.length();
-		System.out.println(strLength);
 		int R = 0, C = 0;
 		for (int i = 1; i <= strLength/2; i++) {
 			if(strLength % i == 0 && C >= R) {
