@@ -1,0 +1,47 @@
+import java.util.*;
+import java.lang.*;
+
+public class BOJ16206 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		int[] cake = new int[n];
+		List<Integer> cakearr = new ArrayList<Integer>();
+		List<Integer> cakearr2 = new ArrayList<Integer>();
+		int sum = 0;
+		for(int i = 0;i<n;i++) {
+			cake[i] = sc.nextInt();
+			if(cake[i]%10 == 0) {
+				cakearr.add(cake[i]);
+			}else {
+				cakearr2.add(cake[i]);
+			}
+		}
+		cakearr.sort(Comparator.naturalOrder());
+		cakearr.addAll(cakearr2);
+		for(int i : cakearr) {
+			if(i%10==0) {
+				if(m>=(i/10)-1) {
+					m -= (i/10)-1;
+					sum += i/10;
+				}else if(m<(i/10)-1){
+					sum += m;
+					m = 0;
+				}
+			}else {
+				if(m>=(i/10)) {
+					m -= (i/10);
+					sum += i/10;
+				}else if(m<(i/10)){
+					sum += m;
+					m = 0;
+				}
+			}
+		}
+		System.out.println(sum);
+	}
+
+}
