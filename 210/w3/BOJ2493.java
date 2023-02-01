@@ -30,7 +30,6 @@ class Main {
         for (int num : answer) {
             System.out.print(num + " ");
         }
-
     }
 
     static class Tower {
