@@ -2,97 +2,94 @@ import java.util.*;
 import java.io.*;
 public class BOJ1063 {
 
-    
-    public static void main(String[] args)throws Exception {
-        
-        //알파벳은 열 숫자는 행
-        // 왼->오 a~h
-        // 위->아래 8~1
+    public static int kingX;
+    public static int kingY;
+    public static int stoneX;
+    public static int stoneY;
 
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int[][] map = new int[9][9];
-        //초기 -> 0, king:1,. stone:2
-        while(st.hasMoreTokens()){
-            //a,1 좌표 
+        int[][] map = new int[8][8];
+
+        while (st.hasMoreTokens()) {
             String king = st.nextToken();
             String stone = st.nextToken();
-            
-            int kingX = 8-(king.charAt(1)-'0');
-            int kingY = king.charAt(0)-'A';
 
-            int stoneX = 8-(stone.charAt(1)-'0');
-            int stoneY = stone.charAt(0)-'A';
-            map[kingX][kingY]=1;
-            map[stoneX][stoneY]=2;
+            kingX = 8 - (king.charAt(1) - '0');
+            kingY = (int) king.charAt(0) - (int) 'A';
+
+            stoneX = 8 - (stone.charAt(1) - '0');
+            stoneY = (int) stone.charAt(0) - (int) 'A';
+
+            map[kingX][kingY] = 1;
+            map[stoneX][stoneY] = 2;
+
             //움직이는 횟수 
             int N = Integer.parseInt(st.nextToken());
-            for(int i=0;i<N;i++){
+
+            for (int i = 0; i < N; i++) {
                 String input = br.readLine();
-                map = changeMap(input,map,kingX,kingY,stoneX,stoneY);
+                map = changeMap(input, map);
             }
-            //1,2위치 출력
-            
-            for(int i=0;i<9;i++){
-                for(int j=0;j<9;j++){
-                    if(map[i][j]==1){
-                        //king인 경우
-                        //int 0이면 a. 1이면 b...
-                        char col = (char)(j+(int)'A');
-                        int row = 8-i;
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(col).append(row);
-                        System.out.println(sb);
-                    }
-                    else if(map[i][j]==2){
-                        //stone인경우
-                        char col = (char)(j+(int)'A');
-                        int row = 8-i;
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(col).append(row);
-                        System.out.println(sb);
-                    }
-                }
-            }
+
+            //정답 출력
+            printAnswer();
+           
+
         }
     }
+    
+    private static void printAnswer() {
+        StringBuilder sb = new StringBuilder();
 
-    private static int[][] changeMap(String input, int[][] map, int kingX, int kingY, int stoneX, int stoneY) {
+        char kingCol = (char) ((int) 'A' + kingY);
+        int kingRow = 8 - kingX;
+        sb.append(kingCol).append(kingRow);
+
+        char stoneCol = (char) ((int) 'A' + stoneY);
+        int stoneRow = 8 - stoneX;
+        sb.append("\n").append(stoneCol).append(stoneRow);
+        System.out.println(sb);
+    }
+
+    private static int[][] changeMap(String input, int[][] map) {
         //돌과 같은 곳으로 이동할 때 돌,킹 둘다 같은 방향으로 이동
         switch(input){
             case "R":
-                map = move(map,0,1,kingX,kingY);
+                map = move(map,0,1);
                 break;
             case "L":
-                map = move(map,0,-1,kingX,kingY);
+                map = move(map,0,-1);
                 break;
             case "B":
-                map = move(map,1,0,kingX,kingY);
+                map = move(map,1,0);
                 break;
             case "T":  
-                map = move(map,-1,0,kingX,kingY);
+                map = move(map,-1,0);
                 break;
             case "RT":
-                map = move(map,-1,1,kingX,kingY);
+                map = move(map,-1,1);
                 break;
             case "LT":
-                map = move(map,-1,-1,kingX,kingY);
+                map = move(map,-1,-1);
                 break;
             case "RB":
-                map = move(map,1,1,kingX,kingY);
+                map = move(map,1,1);
                 break;
             case "LB":
-                map = move(map,1,-1,kingX,kingY);
+                map = move(map,1,-1);
                 break;
         }
         return map;
     }
 
-    private static int[][] move(int[][] map, int dx,int dy,int kingX,int kingY){
+    private static int[][] move(int[][] map, int dx,int dy){
         int kx = kingX+dx;
-        int ky = kingY+dy;
-         //돌이 있는지 확인
-        if(kx>=0 && ky<8 && ky>=0 &&ky<8){
+        int ky = kingY + dy;
+        
+        if(kx>=0 && kx<8 && ky>=0 &&ky<8){
             if(map[kx][ky]==2){
                 int sx = kx+dx;
                 int sy = ky+dy;
@@ -100,12 +97,20 @@ public class BOJ1063 {
                     map[kx][ky]=1;
                     map[kingX][kingY]=0;
                     map[sx][sy] = 2;
+
+                    kingX = kx;
+                    kingY = ky;
+                    stoneX = sx;
+                    stoneY = sy;
+                    
                 }
             }
-            else{
-                //돌 없으면
+            else {
+                
                 map[kx][ky]=1;
-                map[kingX][kingY]=0;
+                map[kingX][kingY] = 0;
+                kingX = kx;
+                kingY = ky;
             }    
         }
         return map;
