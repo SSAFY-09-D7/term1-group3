@@ -8,8 +8,6 @@ public class BOJ1978 {
         int count = 0;
         while (st.hasMoreTokens()) {
             int number = Integer.parseInt(st.nextToken());
-            //소수판별: 특정 숫자 제곱근까지만 약수의 여부를 검증
-
             if (number == 2)
                 count++;
             else if (number == 1)
