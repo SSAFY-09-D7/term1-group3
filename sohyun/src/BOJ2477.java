@@ -32,13 +32,6 @@ public class BOJ2477 {
                  
             }
         }
-
-        System.out.println(heightIdx);
-        System.out.println(widthIdx);
-        //작은 사각형 구하려고 할 때
-        //hMAxIdx+3 %6
-        //hMinIdx+3 %6
-        //규칙을 못찾았음 ; 이걸로 구하면 깔끔
         int area = height * width;
         int hMinIdx = (heightIdx + 3) % 6;
         int wMinIdx = (widthIdx + 3) % 6;
