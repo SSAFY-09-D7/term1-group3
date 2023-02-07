@@ -25,7 +25,6 @@ class Main {
                 result += Math.ceil((double) cnt[i][j] / k);
             }
         }
-
         System.out.println(result);
     }
 
