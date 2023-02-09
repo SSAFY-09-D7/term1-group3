@@ -47,7 +47,7 @@ public class SWEA1210 {
                 ladder[endX][endY] = 2;
             }
         }
-        System.out.printㄹ("#%d %d\n",T,endY);
+        System.out.printf("#%d %d\n",T,endY);
 
 		
 	}
