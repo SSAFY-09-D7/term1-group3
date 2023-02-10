@@ -71,4 +71,4 @@ public class BOJ14719 {
 		return area;
 	}
 
-}
+} 
