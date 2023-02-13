@@ -1,3 +1,5 @@
+package w5;
+
 import java.io.*;
 import java.util.*;
 class Main {
