@@ -33,7 +33,6 @@ class Main {
         	
         	int mostIdx = -1;
         	
-        	// 비었을 때 넣기
         	boolean added = false;
         	for (int j = 0; j < n; j++) {
         		if (plugs[j] == 0 || plugs[j] == elecs[i]) {
@@ -46,16 +45,16 @@ class Main {
         		if (mostIdx == -1) {
         			mostIdx = j;
         		} else {        			
-        			int a = map.get(plugs[mostIdx]).size() > 0 ? map.get(mostIdx).get(0) : Integer.MAX_VALUE;
-        			int b = map.get(plugs[j]).size() > 0 ? map.get(j).get(0) : Integer.MAX_VALUE;
-        			mostIdx = a < b ? mostIdx : j; 
+        			int a = map.get(plugs[mostIdx]).size() > 0 ? map.get(plugs[mostIdx]).get(0) : Integer.MAX_VALUE;
+        			int b = map.get(plugs[j]).size() > 0 ? map.get(plugs[j]).get(0) : Integer.MAX_VALUE;
+        			mostIdx = a > b ? mostIdx : j; 
         		}
         		
         		
         	}
         	if (added) continue;
         	plugs[mostIdx] = elecs[i];
-        	map.get(plugs[mostIdx]).remove(0);
+        	if (map.get(plugs[mostIdx]).size() > 0) map.get(plugs[mostIdx]).remove(0);
         	cnt++;
         }
         
