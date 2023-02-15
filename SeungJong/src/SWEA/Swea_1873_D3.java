@@ -93,8 +93,7 @@ public class Swea_1873_D3 {
 								arr[StartX][StartY - j2] = '.';
 								break;
 							}
-							else if(arr[StartX][StartY - j2] == '#') break;
-									
+							else if(arr[StartX][StartY - j2] == '#') break;							
 						}
 					}
 						

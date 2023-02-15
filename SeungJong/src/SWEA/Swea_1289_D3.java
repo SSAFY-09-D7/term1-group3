@@ -19,8 +19,7 @@ public class Swea_1289_D3 {
 				}
 			}
 			System.out.println("#"+tc+" "+count);
-		}
-		
+		}		
 		sc.close();
 	}
 
