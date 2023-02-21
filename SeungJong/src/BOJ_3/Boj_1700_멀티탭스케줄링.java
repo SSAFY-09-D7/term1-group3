@@ -27,10 +27,8 @@ public class Boj_1700_멀티탭스케줄링 {
 			System.out.println(ans);
 		} else {
 			int lastIndex = N;
-			next = getNext(N, str);
 			for (int i = N; i < str.length-N; i++) {  // 마지막 N-1개 체크 못함
 				if(!plug.contains(str[i])) {
-					next = getNext(i+1, str);
 					endNext.clear();
 					for (int j = i+1; j < str.length; j++) {
 						endNext.add(str[j]);
@@ -85,18 +83,5 @@ public class Boj_1700_멀티탭스케줄링 {
 		}
 		return temp;
 	}
-	private static ArrayList<String> getNext(int i, String[] str) {
-		ArrayList<String> temp = new ArrayList<String>();
-		while(temp.size() != N) {
-			if(!temp.contains(str[i]))
-			temp.add(str[i]);
-			if(i+1 == str.length) {
-				return temp;
-			}
-			i++;
-		}
-		return temp;
-	}
-	
 }
 
