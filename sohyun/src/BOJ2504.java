@@ -5,88 +5,68 @@ public class BOJ2504 {
 
 	public static void main(String[] args)throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String s = br.readLine();
+		char[] s = br.readLine().toCharArray();
 		Stack<Character> stack = new Stack<>();
-		Stack<Character> score = new Stack<>();
 		
-		int i=0;
+		
 		int answer = 0;
-		while (i < s.length()) {
-			char now = s.charAt(i);
-			//닫힌 괄호면 ),']'
+		int tmp = 1;
+		for (int i = 0; i < s.length; i++) {
+			char now = s[i];
+			if (now == '(') {
+				tmp *= 2;
+				stack.push(now);
+			}
+			else if (now == '[') {
+				tmp *= 3;
+				stack.push(now);
+			}
+			else if (now == ')') {
+				if (!stack.isEmpty()) {
+					char top = stack.pop();
+					if (top== '(') {
+						if(s[i-1]=='(')
+							answer += tmp;
+						tmp /= 2;
 
-			if (now == ')') {
-				boolean isFind = false;
-				while (!stack.isEmpty()) {
-					char opo = stack.pop();
-					if (opo == '(') {
-						isFind = true;
-						// score.add('2');
+					}
+					else {
+						answer = 0;
 						break;
 					}
-
 				}
-				if (isFind) {
-					//찾았으면
-					//2점을 더하는지 곱하는지??
-
-				} else {
-					//없으면 오류임
+				else {
 					answer = 0;
 					break;
 				}
-
 
 			} else if (now == ']') {
-				boolean isFind = false;
-				while (!stack.isEmpty()) {
-					char opo = stack.pop();
-					if (opo == '[') {
-						isFind = true;
-						// score.add('3');
+				if (!stack.isEmpty()) {
+					char top = stack.pop();
+					if (top == '[') {
+						if(s[i-1]=='[')
+							answer += tmp;
+						tmp /= 3;
+					}
+					else {
+						answer = 0;
 						break;
 					}
+					
 				}
-				if (isFind) {
-				} else {
-
+				else {
 					answer = 0;
 					break;
 				}
-			} else if (now == '(' || now == '[') {
-				stack.add(now);
-				if (i == 0) {
-					if (now == '(')
-						score.add('2');
-					else
-						score.add('3');
-				}
-				
-				if (i < s.length() - 1 && i > 0) {
-					if (s.charAt(i - 1) == '(' || s.charAt(i - 1) == '[') {
-						score.add('*');
-						if(s.charAt(i)=='(')
-							score.add('2');
-						else
-							score.add('3');
-					} else if (s.charAt(i - 1) == ']'||  s.charAt(i - 1) == ')') {
-						
-						score.add('+');
-						if(s.charAt(i)=='(')
-							score.add('2');
-						else
-							score.add('3');
-					}
-				} 
-
 			}
-			i++;
 			
-			if(stack.isEmpty()) System.out.println(score);
-			// System.out.println(score);
 		}
 
+		if (!stack.isEmpty()) {
+			answer = 0;
+		}
 		System.out.println(answer);
+		
 	}
 
 }
