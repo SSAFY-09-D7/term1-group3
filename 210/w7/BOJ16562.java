@@ -8,7 +8,7 @@ class Main {
 	static int[] needs;
 	static int[] parent;
 	public static void main(String[] arg) throws Exception {
-    	System.setIn(new FileInputStream("./inputs/input_BOJ16565.txt"));
+    	System.setIn(new FileInputStream("./inputs/input_BOJ16562.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         
