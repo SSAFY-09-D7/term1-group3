@@ -36,18 +36,13 @@ public class PrimPractice {
 		return min;
 	}
 
-	private static class Node implements Comparable<Node> {
+	private static class Node {
 		int end, weight;
 
 		public Node(int end, int weight) {
 			super();
 			this.end = end;
 			this.weight = weight;
-		}
-
-		@Override
-		public int compareTo(Node o) {
-			return Integer.compare(this.weight, o.weight);
 		}
 
 	}

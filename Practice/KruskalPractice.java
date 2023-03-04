@@ -31,7 +31,7 @@ public class KruskalPractice {
 		return min;
 	}
 
-	private static class Edge implements Comparable<Edge> {
+	private static class Edge {
 		int start, end, weight;
 
 		public Edge(int start, int end, int weight) {
@@ -39,11 +39,6 @@ public class KruskalPractice {
 			this.start = start;
 			this.end = end;
 			this.weight = weight;
-		}
-
-		@Override
-		public int compareTo(Edge o) {
-			return Integer.compare(this.weight, o.weight);
 		}
 
 	}
