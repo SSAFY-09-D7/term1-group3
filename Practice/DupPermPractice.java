@@ -8,10 +8,10 @@ public class DupPermPractice {
 	public static void main(String[] args) {
 
 		// 4개 줄세워서 출력
-		perm();
+		DupPerm();
 	}
 
-	private static void perm() {
+	private static void DupPerm() {
 
 	}
 }
