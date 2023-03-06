@@ -29,9 +29,9 @@ public class DijkstraPractice {
 	}
 
 	private static int dijkstra() {
-		int min = Integer.MAX_VALUE;
+		int val = Integer.MAX_VALUE;
 
-		return min;
+		return val;
 	}
 
 	private static class Node {
