@@ -87,5 +87,6 @@ public class BOJ16234 {
             }
         }
         return sum;
+        
     }
 }
