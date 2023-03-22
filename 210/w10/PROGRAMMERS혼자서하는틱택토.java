@@ -1,3 +1,5 @@
+package w10;
+
 class Solution {
     public int solution(String[] board) {
         int oCnt = 0, xCnt = 0, oTCnt = 0, xTCnt = 0;
