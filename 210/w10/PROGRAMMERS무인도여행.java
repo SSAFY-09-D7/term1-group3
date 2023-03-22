@@ -1,3 +1,5 @@
+package w10;
+
 import java.util.*;
 
 class Solution {
