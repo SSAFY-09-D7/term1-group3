@@ -1,4 +1,6 @@
-mport java.util.*;
+package w10;
+
+import java.util.*;
 
 class Solution {
     int H, W, result = Integer.MAX_VALUE;
