@@ -2,13 +2,10 @@ package w11;
 
 class Solution {
     public int solution(int m, int n, int[][] puddles) {
-        int answer = 0;
-        
         int[][] dp = new int[n][m];
         
-        for (int[] p : puddles) {
+        for (int[] p : puddles)
             dp[p[1]-1][p[0]-1] = -1;
-        }
         
         for (int i = 0; i < n; i++) {
             if (dp[i][0] == -1) break;
