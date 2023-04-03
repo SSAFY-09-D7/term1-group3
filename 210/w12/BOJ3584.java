@@ -8,6 +8,7 @@ public class Main {
     static int[] parents;
 
     public static void main(String[] args) throws Exception {
+        System.setIn(new FileInputStream("./inputs/input_BOJ3584.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
