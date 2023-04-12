@@ -35,7 +35,7 @@ SSAFY 9기 대전 7반 3조
 - 다른 구성원들은 해당 이슈에 적극적 코멘트
 - 이슈 오픈 시간, 닫은 시간 비교 후 풀이 복기
 
-## 🍰 문제 리스트
+## 🍰 문제 목록
 
 매일 (자율 1문제)  
 [공통 문제 목록](https://docs.google.com/spreadsheets/d/1mmvh_2dj8T4FD75eNYFPrYTZXSfq78uiCFg0Z011E0Q/edit?usp=sharing)
